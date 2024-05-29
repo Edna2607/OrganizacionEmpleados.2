@@ -1,0 +1,20 @@
+.orgSection{
+    width: 100%;
+    display: flex; /*de esta manera el titulo y el boton quedan uno al lado del otro*/
+    justify-content: center;
+    align-items: center; /*Alinear los elementos al centro*/
+}
+
+.title{
+    color: #6278F7;
+    font-size: 40px;
+    font-weight: 400;
+    padding-bottom: 24px;
+    border-bottom: 4px solid #6278F7; /*Linea inferior del titulo : Mi Organizacion*/
+}
+
+.orgSection img{
+    position: absolute;
+    right: 25%; /*Distancia del boton*/
+    cursor: pointer; /*Cuando se pare el cursor sobre el boton entonces aparecera una manito*/
+}

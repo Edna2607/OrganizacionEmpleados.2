@@ -1,0 +1,18 @@
+.lista-opciones label{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: block; /*el nombre queda encima del input*/
+    margin-bottom: 8px;
+}
+
+.lista-opciones select{
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: 24px;
+    outline-color: #6278F7; /*de esta forma el cuando se ubica el mouse sobre el cajon cambia de color*/
+    font-size: 16px;
+    border: none;
+}
