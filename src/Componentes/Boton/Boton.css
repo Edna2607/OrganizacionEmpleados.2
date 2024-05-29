@@ -5,7 +5,7 @@
     font-family: 'Montserrat' , sans-serif;
     padding: 24px 32px;
     border: none;
-    color: #ffffff;
+    
     margin: 32px 0;
     cursor: pointer; /*Cuando se pare sobre el boton cambia al cursor de manito*/
 }
