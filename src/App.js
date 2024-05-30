@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./Componentes/Header/Header";
 import Formulario from './Componentes/Formulario/Formulario';
 import MiOrg from './Componentes/MiOrg';
+import Equipo from './Componentes/Equipo';
 
 
 
@@ -24,6 +25,11 @@ function App() {
       {mostrarFormulario && <Formulario />}
       
       <MiOrg cambiarMostrar={cambiarMostrar}/>
+      <Equipo equipo="Programación"/>
+      <Equipo equipo="Front End"/>
+      <Equipo equipo="Data Science"/>
+      <Equipo equipo="Devops"/>
+      <Equipo equipo="UX y Diseño"/>
     </div>
   );
 }
