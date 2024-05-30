@@ -62,7 +62,7 @@ function App() {
       <Header />
       
       { /*mostrarFormulario === true ? <Formulario /> : <div></div>*/}
-      {mostrarFormulario && <Formulario />}
+      {mostrarFormulario && <Formulario equipos={equipos.map((equipo) => equipo.titulo)}/>}
       
       <MiOrg cambiarMostrar={cambiarMostrar}/>
        
