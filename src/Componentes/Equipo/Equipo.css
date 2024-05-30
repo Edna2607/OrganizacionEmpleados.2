@@ -14,3 +14,9 @@
     display: inline-block; /*la linea inferior solo va utilizar el espacio necesario*/
     padding-bottom: 8px;
 }
+
+.colaboradores{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
