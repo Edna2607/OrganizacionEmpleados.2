@@ -84,8 +84,10 @@ function App() {
        
       {
         equipos.map( (equipo) => {
-          return <Equipo datos={equipo} key={equipo.titulo}
-          
+          return <Equipo 
+          datos={equipo} 
+          key={equipo.titulo}
+          colaboradores={colaboradores}
           />
         })
       }
