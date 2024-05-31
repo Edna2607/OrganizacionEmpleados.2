@@ -11,6 +11,7 @@ const Formulario = (props) => {
     const [foto, actualizaFoto] = useState("")
     const [equipo, actualizarEquipo] = useState("")
 
+    const{registrarColaborador} = props
 
     //Evita que al darle click al boton se refresque la pantalla
 const manejarEnvio = (evento) =>{
@@ -22,7 +23,7 @@ const manejarEnvio = (evento) =>{
         foto:foto,
         equipo:equipo
     }
-    console.log(datosAEnviar)
+    registrarColaborador(datosAEnviar)
 }
 
     return <section className="formulario">

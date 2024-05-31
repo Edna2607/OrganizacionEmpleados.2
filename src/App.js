@@ -12,9 +12,21 @@ function App() {
   //ubicacion del Estado = debe estar dentro de la funcion y antes del return.
   const [mostrarFormulario, actualizarMostrar] = useState(true) 
 
+  //Colaboradores : que los datos que se ingresan en el formulario, se guarden en un arreglo vacio.
+  const[colaboradores, actualizarColaboradores] = useState([])
+
   
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario)
+  }
+
+  //Registrar Colaborador
+
+  const registrarColaborador = (colaborador) =>{
+    console.log("Nuevo Colaborador", colaborador)
+    //Esta funcion va a recibir el nuevo colaborador y lo va actualizar
+    //Spread Operator = crear una copia de los valores actuales y después se va agregar el colaborador.
+    actualizarColaboradores([...colaboradores, colaborador])
   }
 
   //Lista de Equipos
@@ -62,13 +74,19 @@ function App() {
       <Header />
       
       { /*mostrarFormulario === true ? <Formulario /> : <div></div>*/}
-      {mostrarFormulario && <Formulario equipos={equipos.map((equipo) => equipo.titulo)}/>}
-      
+      {mostrarFormulario && <Formulario 
+          equipos={equipos.map((equipo) => equipo.titulo)}
+          registrarColaborador={registrarColaborador}
+        />
+      }
+          
       <MiOrg cambiarMostrar={cambiarMostrar}/>
        
       {
         equipos.map( (equipo) => {
-          return <Equipo datos={equipo} key={equipo.titulo}/>
+          return <Equipo datos={equipo} key={equipo.titulo}
+          
+          />
         })
       }
 
