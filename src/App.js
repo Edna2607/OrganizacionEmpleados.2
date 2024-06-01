@@ -4,6 +4,7 @@ import Header from "./Componentes/Header/Header";
 import Formulario from './Componentes/Formulario/Formulario';
 import MiOrg from './Componentes/MiOrg';
 import Equipo from './Componentes/Equipo';
+import Footer from './Componentes/Footer';
 
 
 
@@ -13,7 +14,12 @@ function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(true) 
 
   //Colaboradores : que los datos que se ingresan en el formulario, se guarden en un arreglo vacio.
-  const[colaboradores, actualizarColaboradores] = useState([])
+  const[colaboradores, actualizarColaboradores] = useState([{
+    equipo:"Front End",
+    foto: "https://github.com/harlandlohora.png",
+    nombre: "Harland Lohora",
+    puesto: "Instructor"
+  }])
 
   
   const cambiarMostrar = () => {
@@ -91,6 +97,8 @@ function App() {
           />
         })
       }
+
+      <Footer/>
 
     </div>
   );
