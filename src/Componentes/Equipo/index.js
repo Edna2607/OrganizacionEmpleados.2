@@ -5,7 +5,7 @@ const Equipo = (props) => {
     //Destructuracion
     const { colorPrimario, colorSecundario, titulo } = props.datos
 
-    const { colaboradores } = props
+    const { colaboradores, eliminarColaborador } = props
 
     const colorFondo = {
         backgroundColor: colorSecundario
@@ -22,12 +22,13 @@ const Equipo = (props) => {
                 <h3 style={estiloTitulo}>{titulo}</h3>
                 <div className="colaboradores">
                     {
-                        colaboradores.map((colaborador, index) => <Colaborador 
-                        datos={colaborador}
-                        key={index} 
-                        colorPrimario={colorPrimario} />)
+                        colaboradores.map((colaborador, index) => <Colaborador
+                            datos={colaborador}
+                            key={index}
+                            colorPrimario={colorPrimario} 
+                            eliminarColaborador={eliminarColaborador}
+                        />)
                     }
-
                 </div>
             </section>
         }</>
