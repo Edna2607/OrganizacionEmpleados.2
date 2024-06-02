@@ -3,11 +3,11 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 
 const Colaborador = (props) => {
 
-    const {nombre,puesto,foto,equipo} = props.datos
+    const {nombre,puesto,foto,equipo, id} = props.datos
     const {colorPrimario, eliminarColaborador} = props
 
     return <div className="colaborador">
-        <IoCloseCircleSharp className="eliminar" onClick={eliminarColaborador} />
+        <IoCloseCircleSharp className="eliminar" onClick={() => eliminarColaborador(id)} />
         <div className="encabezado" style={{backgroundColor:colorPrimario}}>
             <img src={foto} alt={nombre} />
         </div>
