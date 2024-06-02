@@ -139,6 +139,12 @@ function App() {
     actualizarEquipos(equiposActualizados)
   }
 
+  //-------Crear Equipo--------
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo)
+    actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid ()} ]) //hace una copia : ... del valor que tenga actualmente equipos y despues le va agregar un nuevo objeto.
+  }
+
   return (
     <div >
       <Header />
@@ -147,6 +153,7 @@ function App() {
       {mostrarFormulario && <Formulario
         equipos={equipos.map((equipo) => equipo.titulo)}
         registrarColaborador={registrarColaborador}
+        crearEquipo={crearEquipo}
       />
       }
 
