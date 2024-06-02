@@ -4,7 +4,7 @@ import hexToRgba from "hex-to-rgba";
 
 const Equipo = (props) => {
     //Destructuracion
-    const { colorPrimario, colorSecundario, titulo } = props.datos
+    const { colorPrimario, colorSecundario, titulo, id } = props.datos
 
     const { colaboradores, eliminarColaborador, actualizarColor } = props
 
@@ -21,7 +21,7 @@ const Equipo = (props) => {
                       className="input-color" //tiene la clase para darle la posicion
                       value={hexToRgba(colorPrimario, 0.6)} //el boton adquiere el color secundario
                       onChange={ (evento) => {
-                         actualizarColor(evento.target.value, titulo);
+                         actualizarColor(evento.target.value, id);
                       }} //Funcion que ejerce una funcion cada vez que se le hace un cambio en el input.
                 />
 
