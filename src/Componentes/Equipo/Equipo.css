@@ -4,6 +4,14 @@
     box-sizing: border-box; /*este estilo hace que la caja no se salga de ese 100%*/
     text-align: center;
     font-size: 32px;
+    position: relative;
+}
+
+/*posicion  del boton de color*/
+.input-color{
+    position: absolute;
+    top: 20px;
+    right:50px;
 }
 
 /*Estilos del Titulo*/
