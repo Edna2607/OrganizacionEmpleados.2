@@ -47,39 +47,8 @@ function App() {
     },
   ])
 
-
-  const cambiarMostrar = () => {
-    actualizarMostrar(!mostrarFormulario)
-  }
-
-
-  //------- Registrar Colaborador------
-
-  const registrarColaborador = (colaborador) => {
-    console.log("Nuevo Colaborador", colaborador)
-    //Esta funcion va a recibir el nuevo colaborador y lo va actualizar
-    //Spread Operator = crear una copia de los valores actuales y después se va agregar el colaborador.
-    actualizarColaboradores([...colaboradores, colaborador])
-  }
-
-
-  //-------ELiminar Colaborador---------
-
-  const eliminarColaborador = () => {
-    console.log("Eliminar Colaborador")
-  }
-
-  //------ Actualizar Color de Equipo ------
-  const actualizarColor = (color, titulo) =>{
-    console.log("Actualizar :" , color,titulo)
-  }
-
-
-
-  //-------Lista de Equipos ---------
-
-  const equipos = [
-
+  const [equipos, actualizarEquipos] = useState([
+    //-------Lista de Equipos ---------
     {
       titulo: "Programación",
       colorPrimario: '#57C278',
@@ -115,7 +84,42 @@ function App() {
       colorPrimario: "#FF8A29",
       colorSecundario: "#FFEEDF"
     },
-  ]
+  ])
+
+
+  const cambiarMostrar = () => {
+    actualizarMostrar(!mostrarFormulario)
+  }
+
+
+  //------- Registrar Colaborador------
+
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo Colaborador", colaborador)
+    //Esta funcion va a recibir el nuevo colaborador y lo va actualizar
+    //Spread Operator = crear una copia de los valores actuales y después se va agregar el colaborador.
+    actualizarColaboradores([...colaboradores, colaborador])
+  }
+
+
+  //-------ELiminar Colaborador---------
+
+  const eliminarColaborador = () => {
+    console.log("Eliminar Colaborador")
+  }
+
+  //------ Actualizar Color de Equipo ------
+  const actualizarColor = (color, titulo) => {
+    console.log("Actualizar :", color, titulo)
+    const equiposActualizados = equipos.map((equipo) => {
+      if(equipo.titulo === titulo){
+        equipo.colorPrimario = color
+      }
+      return equipo
+    })
+
+    actualizarEquipos(equiposActualizados)
+  }
 
   return (
     <div >

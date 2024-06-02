@@ -1,5 +1,6 @@
 import "./Equipo.css";
 import Colaborador from "../Colaborador";
+import hexToRgba from "hex-to-rgba";
 
 const Equipo = (props) => {
     //Destructuracion
@@ -7,7 +8,7 @@ const Equipo = (props) => {
 
     const { colaboradores, eliminarColaborador, actualizarColor } = props
 
-    const colorFondo = { backgroundColor: colorSecundario }
+    const colorFondo = { backgroundColor: hexToRgba(colorPrimario, 0.6)  }
 
     const estiloTitulo = { borderColor: colorPrimario }
 
@@ -18,7 +19,7 @@ const Equipo = (props) => {
                 <input 
                       type='color' //boton de tipo color 
                       className="input-color" //tiene la clase para darle la posicion
-                      value={colorSecundario} //el boton adquiere el color secundario
+                      value={hexToRgba(colorPrimario, 0.6)} //el boton adquiere el color secundario
                       onChange={ (evento) => {
                          actualizarColor(evento.target.value, titulo);
                       }} //Funcion que ejerce una funcion cada vez que se le hace un cambio en el input.
