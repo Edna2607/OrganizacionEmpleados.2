@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Formulario.css";
-import CampoTexto from "../CampoTexto/index";
+import Campo from "../Campo";
 import ListaOpciones from "../ListaOpciones";
 import Boton from "../Boton";
 
@@ -40,21 +40,21 @@ const Formulario = (props) => {
     return <section className="formulario">
         <form onSubmit={manejarEnvio}>
             <h2>Rellena el formulario para crear el colaborador.</h2>
-            <CampoTexto
+            <Campo
                 titulo="Nombre"
                 placeholder="Ingresar Nombre"
                 required
                 valor={nombre}
                 actualizarValor={actualizaNombre}
             />
-            <CampoTexto
+            <Campo
                 titulo="Puesto"
                 placeholder="Ingresar Puesto"
                 required
                 valor={puesto}
                 actualizarValor={actualizaPuesto}
             />
-            <CampoTexto
+            <Campo
                 titulo="Foto"
                 placeholder="Ingresar enlace de foto"
                 required
@@ -70,19 +70,20 @@ const Formulario = (props) => {
         </form>
         <form onSubmit={manejarNuevoEquipo}>
             <h2>Rellena el formulario para crear el equipo.</h2>
-            <CampoTexto
+            <Campo
                 titulo="Titulo"
                 placeholder="Ingresar Nombre"
                 required
                 valor={titulo}
                 actualizarValor={actualizarTitulo}
             />
-            <CampoTexto
+            <Campo
                 titulo="Color"
                 placeholder="Ingresar el Color en Hex"
                 required
                 valor={color}
                 actualizarValor={actualizarColor}
+                type="color"
             />
             <Boton texto="Registrar Equipo" />
         </form>

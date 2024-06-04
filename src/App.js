@@ -13,7 +13,7 @@ import Footer from './Componentes/Footer';
 
 function App() {
   //ubicacion del Estado = debe estar dentro de la funcion y antes del return.
-  const [mostrarFormulario, actualizarMostrar] = useState(false)
+  const [mostrarFormulario, actualizarMostrar] = useState(true)
 
   //Colaboradores : que los datos que se ingresan en el formulario, se guarden en un arreglo vacio.
   const [colaboradores, actualizarColaboradores] = useState([

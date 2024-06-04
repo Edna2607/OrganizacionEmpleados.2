@@ -1,15 +1,19 @@
 .formulario{
     display: flex;
     justify-content: space-evenly;
-    margin: 80px 0;
+    margin: 80px 50px; /*primer valor: arriba y abajo --- segundo valor: lados*/
+    flex-wrap: wrap; /*si esta en una sola linea y ya no cabe lo que hace es enviarlo una linea hacia abajo, es como un responsive*/
+    gap: 20px;/*espacio entre las columnas*/
+
 }
 
 .formulario form{
-    max-width: 80%; /*Tamaño del ancho del formulario*/
+   /* max-width: 80%; Tamaño del ancho del formulario*/
     background-color: #F7F7F7;
     box-shadow: 7px 7px 15px rgba(0, 0, 0, 25%); /*sombra de la caja del formulario*/
     border-radius: 20px; /*Borde del formulario*/
     padding: 8px 100px;
+    flex: 1;
 }
 
 .formulario h2{
