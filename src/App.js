@@ -13,7 +13,7 @@ import Footer from './Componentes/Footer';
 
 function App() {
   //ubicacion del Estado = debe estar dentro de la funcion y antes del return.
-  const [mostrarFormulario, actualizarMostrar] = useState(true)
+  const [mostrarFormulario, actualizarMostrar] = useState(false) /*de esta manera los formularios quedan ocultos por defecto*/ 
 
   //Colaboradores : que los datos que se ingresan en el formulario, se guarden en un arreglo vacio.
   const [colaboradores, actualizarColaboradores] = useState([
@@ -22,35 +22,40 @@ function App() {
       equipo: "Front End",
       foto: "https://github.com/harlandlohora.png",
       nombre: "Harland Lohora",
-      puesto: "Instructor"
+      puesto: "Instructor",
+      fav : true
     },
     {
       id:uuid(),
       equipo: "Programación",
       foto: "https://github.com/genesysaluralatam.png",
       nombre: "Genesys Rondon",
-      puesto: "Desarrolladora de Software e Instructora"
+      puesto: "Desarrolladora de Software e Instructora",
+      fav : false
     },
     {
       id:uuid(),
       equipo: "UX y Diseño",
       foto: "https://github.com/JeanMarieAluraLatam.png",
       nombre: "Jean Marie Quijada",
-      puesto: "Instructora en Alura Latam"
+      puesto: "Instructora en Alura Latam",
+      fav : false
     },
     {
       id:uuid(),
       equipo: "Programación",
       foto: "https://github.com/christianpva.png",
       nombre: "Christian Velasco",
-      puesto: "Head de Alura e Instructor"
+      puesto: "Head de Alura e Instructor",
+      fav : false
     },
     {
       id:uuid(),
       equipo: "Innovación y Gestión",
       foto: "https://github.com/JoseDarioGonzalezCha.png",
       nombre: "Jose Gonzalez",
-      puesto: "Dev FullStack"
+      puesto: "Dev FullStack",
+      fav : false
     },
   ])
 
@@ -145,6 +150,19 @@ function App() {
     actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid ()} ]) //hace una copia : ... del valor que tenga actualmente equipos y despues le va agregar un nuevo objeto.
   }
 
+  //--- Click del me gusta. ---
+  const like = (id) => {
+    console.log("like", id)
+    const colaboradoresActualizados = colaboradores.map((colaborador) => {
+      if(colaborador.id === id){
+        colaborador.fav = !colaborador.fav /*si es true se convierte en false y si es false se convierte en true*/ 
+      }
+      return colaborador
+    })
+
+    actualizarColaboradores(colaboradoresActualizados)
+  }
+
   return (
     <div >
       <Header />
@@ -167,6 +185,7 @@ function App() {
             colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
             eliminarColaborador={eliminarColaborador}
             actualizarColor={actualizarColor}
+            like={like}
           />
         })
       }
